@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Viswa
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ist
+Implementation-Vendor-Id: com.NewSample
+Build-Jdk: 1.8.0_265
+Implementation-URL: http://projects.spring.io/spring-boot/SpringBootSa
+ mple/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
