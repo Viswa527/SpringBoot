@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class Server implements EmbeddedServletContainerCustomizer{
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer container) {
-		container.setPort(1997);	
+		container.setContextPath("/Visw");	
 	}
 }
