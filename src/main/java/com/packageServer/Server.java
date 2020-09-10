@@ -5,7 +5,7 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.stereotype.Component;
 
 @Component
-public abstract class Server implements EmbeddedServletContainerCustomizer{
+public class Server implements EmbeddedServletContainerCustomizer{
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer container) {
 		container.setPort(1997);	
