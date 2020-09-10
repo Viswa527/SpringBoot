@@ -6,6 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.packageController")
+@ComponentScan(basePackages  = "com.packageServer")
 public class Sample {
 
 	public static void main(String[] args) {
