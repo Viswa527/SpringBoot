@@ -44,14 +44,15 @@ public class ProductServiceController {
 	   }
    
    //-----Delete-----
-   @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+   @RequestMapping(value = "/productDelete/{id}", method = RequestMethod.DELETE)
    public ResponseEntity<Object> delete(@PathVariable("id") String id) { 
       productRepo.remove(id);
       return new ResponseEntity<Object>("Product is deleted successsfully", HttpStatus.OK);
    }
    
+   
    //----Update----
-   @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+   @RequestMapping(value = "/productUpdate/{id}", method = RequestMethod.PUT)
    public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) { 
       productRepo.remove(id);
       product.setId(id);
@@ -60,7 +61,7 @@ public class ProductServiceController {
    }
    
    //----create------
-   @RequestMapping(value = "/products", method = RequestMethod.POST)
+   @RequestMapping(value = "/productCreate", method = RequestMethod.POST)
    public ResponseEntity<Object> createProduct(@RequestBody Product product) {
       productRepo.put(product.getId(), product);
       return new ResponseEntity<Object>("Product is created successfully", HttpStatus.CREATED);
