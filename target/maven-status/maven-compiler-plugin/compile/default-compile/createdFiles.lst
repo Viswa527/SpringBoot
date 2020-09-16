@@ -1,3 +1,5 @@
 com/packageSB/Applications.class
+com/packageExceptions/ProductNotFoundException.class
+com/packageExceptions/ProductExceptionController.class
 com/packageModel/Product.class
 com/packageController/ProductServiceController.class

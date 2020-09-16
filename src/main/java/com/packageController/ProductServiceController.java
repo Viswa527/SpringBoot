@@ -3,6 +3,7 @@ package com.packageController;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.packageExceptions.ProductNotFondException;
 import com.packageModel.Product;
 
 @RestController
+@ComponentScan(basePackages = "com.packageExceptions")
 public class ProductServiceController {
    private static Map<String, Product> productRepo = new HashMap<>();
    static {
@@ -65,5 +68,16 @@ public class ProductServiceController {
    public ResponseEntity<Object> createProduct(@RequestBody Product product) {
       productRepo.put(product.getId(), product);
       return new ResponseEntity<Object>("Product is created successfully", HttpStatus.CREATED);
+   }
+   
+   
+   //
+   @RequestMapping(value = "/udateProductWithException/{id}", method = RequestMethod.PUT)
+   public ResponseEntity<Object> updateProductException(@PathVariable("id") String id, @RequestBody Product product) { 
+      if(!productRepo.containsKey(id))throw new ProductNotFondException();
+      productRepo.remove(id);
+      product.setId(id);
+      productRepo.put(id, product);
+      return new ResponseEntity<Object>("Product is updated successfully", HttpStatus.OK);
    }
 }
