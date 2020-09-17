@@ -1,0 +1,5 @@
+com/packageService/ProductService.class
+com/packageRepository/ProductRepository.class
+com/packageApplication/Applicationss.class
+com/packageEntity/Product.class
+com/packageController/ProductController.class
